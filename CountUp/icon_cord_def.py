@@ -80,7 +80,7 @@ class DartCircleIcon:
 
 
 class PlayerBackground01:
-    x = 1432
+    x = -6
     y = 870
 
 
@@ -95,8 +95,29 @@ class PlayerBackground03:
 
 
 class PlayerBackground04:
-    x = -6
+    x = 1432
     y = 870
+
+
+class BottomPlayerName01:
+    x = 196
+    y = 922
+
+
+class BottomPlayerName02:
+    x = 676
+    y = 922
+
+
+class BottomPlayerName03:
+    x = 1157
+    y = 922
+
+
+class BottomPlayerName04:
+    x = 1636
+    y = 922
+
 
 class PlayerRedBackground:
     x = -6
@@ -121,3 +142,43 @@ class PlayerBlueBackground:
 class MarioFist:
     x = 870
     y = 500
+
+
+class CurrentRoundNum:
+    x = 67
+    y = 158
+
+
+class TotalRoundNum:
+    x = 129
+    y = 158
+
+
+class SlashRoundNum:
+    x = 100
+    y = 158
+
+
+class CenterPlayerIcon:
+    x = 878
+    y = 775
+
+
+class PlayerDecorativePattern01:
+    x = 12
+    y = 916
+
+
+class PlayerDecorativePattern02:
+    x = 492
+    y = 916
+
+
+class PlayerDecorativePattern03:
+    x = 973
+    y = 916
+
+
+class PlayerDecorativePattern04:
+    x = 1452
+    y = 916

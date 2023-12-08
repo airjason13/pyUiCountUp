@@ -3,7 +3,6 @@ from .global_def import *
 from .icon_cord_def import *    # for icon cord(pos_x/pos_y)
 
 
-
 '''Image File Uri'''
 Title_CountUp_PNG_File_Name = '/CountUp/CountUp.png'
 Hint_CountUp_PNG_File_Name = '/CountUp/MainBackground1.png'
@@ -22,11 +21,12 @@ LetUsStart_CountUp_PNG_File_Name = '/01Game/LetUsStart.png'
 LetsParty_CountUp_PNG_File_Name = '/HappyAdd/LetsParty.png'
 Dart_Circle_Icon_PNG_File_Name = '/01Game/DartCircleIcon.png'
 Player_Background_PNG_File_Name = '/01Game/PlayerBackground.png'
-Player_Red_Background_PNG_File_Name = '/Player/PlayerRedBackground.png'
-Player_Green_Background_PNG_File_Name = '/Player/PlayerGreenBackground.png'
-Player_Orange_Background_PNG_File_Name = '/Player/PlayerOrangeBackground.png'
-Player_Blue_Background_PNG_File_Name = '/Player/PlayerBlueBackground.png'
+Player_Decorative_Pattern_PNG_File_Name = '/01Game/PlayerDecorativePattern.png'
 
+
+Player_Background_Frame_Cord_List = [PlayerBackground01, PlayerBackground02, PlayerBackground03, PlayerBackground04]
+Player_Decorative_Pattern_Cord_Lists = [PlayerDecorativePattern01, PlayerDecorativePattern02,
+                                        PlayerDecorativePattern03, PlayerDecorativePattern04]
 '''
 Fix Icon include the Title, the Hint, 
 '''
@@ -38,6 +38,8 @@ class UiFixIcon:
         self.window = window
         self.pygame = _pygame
         self.material_folder_uri = material_folder_uri
+
+        ''' Image Init '''
         self.title_png_image = pygame.image.load("Image" + Title_CountUp_PNG_File_Name).convert_alpha()
         self.hint_png_image = pygame.image.load("Image" + Hint_CountUp_PNG_File_Name).convert_alpha()
         self.round_frame_png_image = pygame.image.load("Image" + Round_Frame_CountUp_PNG_File_Name).convert_alpha()
@@ -59,9 +61,8 @@ class UiFixIcon:
             "Image" + Dart_Circle_Icon_PNG_File_Name).convert_alpha()
         self.player_background_png_image = pygame.image.load(
             "Image" + Player_Background_PNG_File_Name).convert_alpha()
-
-        self.player_red_background_png_image = pygame.image.load(
-            "Image" + Player_Red_Background_PNG_File_Name).convert_alpha()
+        self.player_decorative_pattern_png_image = pygame.image.load(
+            "Image" + Player_Decorative_Pattern_PNG_File_Name).convert_alpha()
 
 
 
@@ -114,27 +115,17 @@ class UiFixIcon:
                                                self.dart_circle_icon_png_image.get_width(),
                                                self.dart_circle_icon_png_image.get_height()))
 
-        self.window.blit(self.player_background_png_image,
-                         self.pygame.rect.Rect(PlayerBackground01.x, PlayerBackground01.y,
-                                               self.player_background_png_image.get_width(),
-                                               self.player_background_png_image.get_height()))
+        for i in range(MAX_PLAYER):
+            self.window.blit(self.player_background_png_image,
+                             self.pygame.rect.Rect(Player_Background_Frame_Cord_List[i].x,
+                                                   Player_Background_Frame_Cord_List[i].y,
+                                                   self.player_background_png_image.get_width(),
+                                                   self.player_background_png_image.get_height()))
 
-        self.window.blit(self.player_background_png_image,
-                         self.pygame.rect.Rect(PlayerBackground02.x, PlayerBackground02.y,
-                                               self.player_background_png_image.get_width(),
-                                               self.player_background_png_image.get_height()))
+        for i in range(MAX_PLAYER):
+            self.window.blit(self.player_decorative_pattern_png_image,
+                             self.pygame.rect.Rect(Player_Decorative_Pattern_Cord_Lists[i].x,
+                                                   Player_Decorative_Pattern_Cord_Lists[i].y,
+                                                   self.player_decorative_pattern_png_image.get_width(),
+                                                   self.player_decorative_pattern_png_image.get_height()))
 
-        self.window.blit(self.player_background_png_image,
-                         self.pygame.rect.Rect(PlayerBackground03.x, PlayerBackground03.y,
-                                               self.player_background_png_image.get_width(),
-                                               self.player_background_png_image.get_height()))
-
-        self.window.blit(self.player_background_png_image,
-                         self.pygame.rect.Rect(PlayerBackground04.x, PlayerBackground04.y,
-                                               self.player_background_png_image.get_width(),
-                                               self.player_background_png_image.get_height()))
-
-        self.window.blit(self.player_red_background_png_image,
-                         self.pygame.rect.Rect(PlayerRedBackground.x, PlayerRedBackground.y,
-                                               self.player_red_background_png_image.get_width(),
-                                               self.player_red_background_png_image.get_height()))
